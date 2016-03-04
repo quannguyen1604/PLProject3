@@ -1,4 +1,7 @@
+
+
 var person = function(){
+
     // private data
     var data = {
         name:'Person',
@@ -75,6 +78,39 @@ var customer = function(p){
 }(person);
 
 var p1 = Object.create(person);
+
+
+
+$(document).ready(function() {
+
+    document.writeln("Welcome to the Person Tester application" + "<br><br>");
+    document.writeln("Create customer or employee? (c/e): " + "<input type = text id = 'q1' value = 'c'>");
+
+    $("#q1").change(q1);
+
+    function q1() {
+        //var q1 = document.getElementById('q1')
+
+
+        if ($("#q1").val().toLowerCase() == 'c') {
+            document.writeln("Create customer or employee? (c/e): " + "<input type = text id = 'q1' value = 'c'>");
+            document.write("<br><br>" + "Enter first name: "+"<input type = text id = 'q2a' onchange = 'q2();'>");
+            document.write("<br>" + "Enter last name: "+"<input type = text id = 'q2b' onchange = 'q2();'>");
+            document.write("<br>" + "Enter email address: "+"<input type = text id = 'q2c' onchange = 'q2();'>");
+            document.write("<br>" + "Customer number: "+"<input type = text id = 'q2d' onchange = 'q2();'>");
+        } else {
+            document.writeln("Create customer or employee? (c/e): " + "<input type = text id = 'q1' value = 'e'>");
+            document.write("<br><br>" + "Enter first name: " + "<input type = text id = 'q2a' onchange = 'q2();'>");
+            document.write("<br>" + "Enter last name: " + "<input type = text id = 'q2b' onchange = 'q2();'>");
+            document.write("<br>" + "Enter email address: " + "<input type = text id = 'q2c' onchange = 'q2();'>");
+            document.write("<br>" + "Social security number: " + "<input type = text id = 'q2d' onchange = 'q2();'>");
+        }
+    }
+});
+
+
+
+
 /*
 document.writeln(Object.getPrototypeOf(p1) + "<BR>");
 document.writeln(p1.pname + "<BR>");
