@@ -125,12 +125,13 @@ $(document).ready(function() {
             document.writeln("Customer number: " + p1.run('custNo') + "<BR>");
         }
 
-        document.writeln("Continue?" + "<br><input type = button value = 'yes' id = 'yes'>" + "  " + "</t><input type = button value = 'no' id = 'no'>")
+        document.writeln("<br>Continue?" + "<br><input type = button value = 'yes' id = 'yes'>" + "  " + "</t><input type = button value = 'no' id = 'no'>")
         $("#yes").click(function() {
             location.reload();
         });
         $("#no").click(function() {
-            window.close();
+            document.writeln("<br><br>Thanks for stopping by!\nPage will self destruct in 3...2...1...");
+            setTimeout(window.close,3000);
         });
     }
 
